@@ -19,19 +19,18 @@ class WeakPrng(object):
 
 solve = [210205973, 22795300, 58776750, 121262470, 264731963, 140842553, 242590528, 195244728, 86752752]
 
-#base_num = solve[1]
+guess_x = []
 
-#counter = 0L
-#border = P
-#while counter < border:
-#    prng = WeakPrng(P, counter)
-#    if base_num == prng.next():
-#        print "X_guess found", counter
-#    if counter % 100000 == 0:
-#        print "Processed guesses", counter, "need to process", border - counter
-#    counter = counter+1L
+base_num = solve[1]
 
-guess_x = [89059908, 189093025, 268575982]
+counter = 0L
+border = P
+while counter < border:
+    prng = WeakPrng(P, counter)
+    if base_num == prng.next():
+        print "X_guess found", counter
+        guess_x.append(counter)
+    counter = counter+1L
 
 for x in guess_x:
     prng = WeakPrng(P, x)
